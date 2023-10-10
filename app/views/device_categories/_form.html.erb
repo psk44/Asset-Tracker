@@ -1,22 +1,13 @@
-<%= form_with(model: device_category) do |form| %>
-  <% if device_category.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(device_category.errors.count, "error") %> prohibited this device_category from being saved:</h2>
 
-      <ul>
-        <% device_category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@device_category) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-inputs">
+    <%= f.input :name %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

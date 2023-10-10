@@ -1,27 +1,14 @@
-<%= form_with(model: device_manufacturer) do |form| %>
-  <% if device_manufacturer.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(device_manufacturer.errors.count, "error") %> prohibited this device_manufacturer from being saved:</h2>
 
-      <ul>
-        <% device_manufacturer.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@device_manufacturer) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :website %>
   </div>
 
-  <div>
-    <%= form.label :website, style: "display: block" %>
-    <%= form.text_field :website %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
