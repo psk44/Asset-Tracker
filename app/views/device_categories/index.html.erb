@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Device categories</h1>
+
+<div id="device_categories">
+  <% @device_categories.each do |device_category| %>
+    <%= render device_category %>
+    <p>
+      <%= link_to "Show this device category", device_category %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New device category", new_device_category_path %>

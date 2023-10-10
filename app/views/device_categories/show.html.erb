@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @device_category %>
+
+<div>
+  <%= link_to "Edit this device category", edit_device_category_path(@device_category) %> |
+  <%= link_to "Back to device categories", device_categories_path %>
+
+  <%= button_to "Destroy this device category", @device_category, method: :delete %>
+</div>

@@ -1,0 +1,32 @@
+<%= form_with(model: software) do |form| %>
+  <% if software.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(software.errors.count, "error") %> prohibited this software from being saved:</h2>
+
+      <ul>
+        <% software.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :license_count, style: "display: block" %>
+    <%= form.number_field :license_count %>
+  </div>
+
+  <div>
+    <%= form.label :assigned_employees, style: "display: block" %>
+    <%= form.text_field :assigned_employees %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

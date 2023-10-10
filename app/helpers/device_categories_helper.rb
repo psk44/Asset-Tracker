@@ -1,0 +1,2 @@
+module DeviceCategoriesHelper
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @device_manufacturer %>
+
+<div>
+  <%= link_to "Edit this device manufacturer", edit_device_manufacturer_path(@device_manufacturer) %> |
+  <%= link_to "Back to device manufacturers", device_manufacturers_path %>
+
+  <%= button_to "Destroy this device manufacturer", @device_manufacturer, method: :delete %>
+</div>

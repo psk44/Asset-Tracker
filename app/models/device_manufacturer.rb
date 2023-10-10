@@ -1,0 +1,2 @@
+class DeviceManufacturer < ApplicationRecord
+end

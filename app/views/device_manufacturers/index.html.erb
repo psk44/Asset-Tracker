@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Device manufacturers</h1>
+
+<div id="device_manufacturers">
+  <% @device_manufacturers.each do |device_manufacturer| %>
+    <%= render device_manufacturer %>
+    <p>
+      <%= link_to "Show this device manufacturer", device_manufacturer %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New device manufacturer", new_device_manufacturer_path %>
