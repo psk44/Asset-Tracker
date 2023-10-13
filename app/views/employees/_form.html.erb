@@ -1,15 +1,12 @@
 
-<%= simple_form_for(@employee) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for employee do |form| %>
 
-  <div class="form-inputs">
-    <%= f.input :full_name %>
-    <%= f.input :assigned_devices %>
-    <%= f.input :assigned_software %>
-  </div>
+  <%= form.input :full_name %>
+  <%= form.input :profile_picture %>
+  <%= form.input :assigned_devices %>
+  <%= form.input :assigned_software %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div> 
+    <%= form.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
