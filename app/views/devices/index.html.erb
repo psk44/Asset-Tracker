@@ -4,10 +4,12 @@
 
 <div id="devices">
   <% @devices.each do |device| %>
-    <%= render device %>
-    <p>
-      <%= link_to "Show this device", device %>
-    </p>
+    <div class="card">
+      <%= render device %>
+      <p>
+        <%= link_to "Show this device", device %>
+      </p>
+    </div>
   <% end %>
 </div>
 

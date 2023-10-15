@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Device categories</h1>
+<h1>Categories</h1>
 
 <div id="device_categories">
   <% @device_categories.each do |device_category| %>
-    <%= render device_category %>
-    <p>
-      <%= link_to "Show this device category", device_category %>
-    </p>
+    <div class="card">
+      <%= render device_category %>
+      <p>
+        <%= link_to "Show this category", device_category %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New device category", new_device_category_path %>
+<%= link_to "New category", new_device_category_path %>
