@@ -65,6 +65,6 @@ class SoftwaresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def software_params
-      params.require(:software).permit(:name, :license_count, :assigned_employees)
+      params.require(:software).permit(:name, :license_count, :assigned_employees, :employee_ids => [])
     end
 end

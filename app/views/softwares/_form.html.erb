@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :license_count %>
-    <%= f.input :assigned_employees %>
+    <%= f.association :employees, label_method: :full_name, as: :check_boxes %>
   </div>
 
   <div class="form-actions">

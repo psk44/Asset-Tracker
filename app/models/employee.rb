@@ -3,7 +3,7 @@ class Employee < ApplicationRecord
   end
 
   has_many :devices  
-  has_many :softwares
+  has_and_belongs_to_many :softwares
 
   def full_name
     if first_name.present? and last_name.present?
