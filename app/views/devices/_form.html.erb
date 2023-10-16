@@ -7,7 +7,7 @@
     <%= f.input :name %>
     <%= f.association :device_manufacturer %>
     <%= f.association :device_category %>
-    <%= f.input :assigned_to %>
+    <%= f.association :employee, label_method: :full_name %>
   </div>
 
   <div class="form-actions">

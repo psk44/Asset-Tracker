@@ -20,7 +20,9 @@
 
   <p>
     <strong>Assigned to:</strong>
-    <%= device.assigned_to %>
+      <% if device.employee.present? %>
+        <%= device.employee.full_name %>
+      <% end %>
   </p>
 
 </div>
