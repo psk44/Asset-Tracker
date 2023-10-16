@@ -13,7 +13,9 @@
 
   <p>
     <strong>Category:</strong>
-    <%= device.category %>
+      <% if device.device_category.present? %>
+        <%= device.device_category.name %>
+      <% end %>
   </p>
 
   <p>
