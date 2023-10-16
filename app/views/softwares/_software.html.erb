@@ -11,7 +11,11 @@
 
   <p>
     <strong>Assigned employees:</strong>
-    <%= software.assigned_employees %>
+    <ul>
+      <% software.employees.each do |employee| %>
+       <li><%= link_to employee.full_name, employee_path(employee) %></li>
+      <% end %>
+    </ul>
   </p>
 
 </div>
