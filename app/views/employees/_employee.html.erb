@@ -11,11 +11,19 @@
 
   <p>
     <strong>Assigned devices:</strong>
-    <%= employee.assigned_devices %>
+    <ul>
+      <% employee.devices.each do |device| %>
+        <li><%= link_to device.name, device_path(device) %></li>
+      <% end %>
+    </ul>
   </p>
 
   <p>
     <strong>Assigned software:</strong>
-    <%= employee.assigned_software %>
+    <ul>
+      <% employee.softwares.each do |software| %>
+        <li><%= link_to software.name, software_path(software) %></li>
+      <% end %>
+    </ul>  
   </p>
 </div>
