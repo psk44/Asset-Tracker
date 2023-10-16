@@ -2,10 +2,11 @@
 <%= simple_form_for(@device) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= @device.errors.inspect %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :manufacturer %>
+    <%= f.association :device_manufacturer %>
     <%= f.input :category %>
     <%= f.input :assigned_to %>
   </div>

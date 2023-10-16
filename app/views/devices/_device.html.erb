@@ -6,7 +6,9 @@
 
   <p>
     <strong>Manufacturer:</strong>
-    <%= device.manufacturer %>
+      <% if device.device_manufacturer.present? %>
+        <%= device.device_manufacturer.name %>
+      <% end %>
   </p>
 
   <p>
