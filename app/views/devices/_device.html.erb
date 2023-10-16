@@ -21,7 +21,7 @@
   <p>
     <strong>Assigned to:</strong>
       <% if device.employee.present? %>
-        <%= device.employee.full_name %>
+        <%= link_to device.employee.full_name, employee_path(device.employee) %>
       <% end %>
   </p>
 
