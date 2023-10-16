@@ -12,24 +12,14 @@
     </tr>
   </thead>
   <tbody>
+    <% DeviceCategory.all.each do |device_category| %>
     <tr>
-      <th scope="row">Desktop</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row"><%= device_category.name %></th>
+      <td><%= device_category.devices.count %></td>
+      <td><%= device_category.devices.where.not(employee_id: nil).count %></td>
+      <td><%= device_category.devices.where(employee_id: "public").count %></td>
     </tr>
-    <tr>
-      <th scope="row">Laptop</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Smart Phone</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    <% end %>
   </tbody>
 
 </table>
