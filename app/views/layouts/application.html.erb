@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Track</title>
+    <title>Asset Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Asset Tracker</a>
+      <a class="navbar-brand" href="/dashboard/index">Asset Tracker</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,12 +35,12 @@
           	<a class="nav-link" href="/softwares">Software</a>    
           </li> 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/other" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-             Other
-            </a>
+            <a class="nav-link dropdown-toggle" href="/other"
+              role="button" data-bs-toggle="dropdown" 
+              aria-expanded="false">Other</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="device_categories">Device Categories</a></li>
-              <li><a class="dropdown-item" href="device_manufacturers">Device Manufacturers</a></li>
+              <li><a class="dropdown-item" href="/device_categories">Device Categories</a></li>
+              <li><a class="dropdown-item" href="/device_manufacturers">Device Manufacturers</a></li>
             </ul>
           </li>
         </ul>
