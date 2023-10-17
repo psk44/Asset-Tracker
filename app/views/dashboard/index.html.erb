@@ -21,7 +21,6 @@
     </tr>
     <% end %>
   </tbody>
-
 </table>
 
 <h2 class="mt-5">Software Compliance</h2>
@@ -35,29 +34,13 @@
     </tr>
   </thead>
   <tbody>
+    <% Software.all.each do |software| %>
     <tr>
-      <th>Microsoft Windows</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row"><%= software.name %></th>
+      <td><%= software.license_count %></td>
+      <td><%= software.employees.count %></td>
+      <td><%= software.compliant? %></td>
     </tr>
-    <tr>
-      <th scope="row">Microsoft Office</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Dropbox</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-		<tr>
-			<th scope="row">Gmail</th>
-			<td></td>
-			<td></td>
-      <td></td>
-		</tr>
+    <% end %>
   </tbody>
 </table>
