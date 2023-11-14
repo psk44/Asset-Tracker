@@ -7,3 +7,15 @@
 <% end %>
 
 <p class="mt-3">'<%= @query %>'</p>
+
+<h2>Results</h2>
+
+<% if @devices.present? %>
+  <p>Hits: <%= @devices.count %></p>
+
+  <ul>
+    <% @devices.each do |d| %>
+      <li><%= d.title %><li>
+    <% end %>
+  </ul>
+<% end %>
