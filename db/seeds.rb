@@ -36,6 +36,15 @@ end
   end
 end
 
+# 3 devices to each employee
+3.times do |n|
+  Employee.all.each do |employee|
+    device=Device.all.sample
+    device.employee=employee
+    device.save
+  end
+end
+
 # Seed software packages
 softwares = []
 5.times do |n|
