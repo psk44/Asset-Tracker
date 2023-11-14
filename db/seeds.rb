@@ -23,20 +23,17 @@ employees = []
   )
 end
 
-# Seed devices and assign to employees
-employees.each do |employee|
-  Device.create(
-    name: "Smart Phone #{employee.id}",
-    device_category: DeviceCategory.first,
-    device_manufacturer: DeviceManufacturer.first,
-    employee: employee
-  )
-  Device.create(
-    name: "Laptop #{employee.id}",
-    device_category: DeviceCategory.second,
-    device_manufacturer: DeviceManufacturer.second,
-    employee: employee
-  )
+# Create device for each category and manufacturer 3x
+3.times do |n|
+  DeviceCategory.all.each do |category|
+    DeviceManufacturer.all.each do |manufacturer|
+      Device.create(
+        name: "Device #{rand(100)}",
+        device_category: category,
+        device_manufacturer: manufacturer,
+      )
+    end
+  end
 end
 
 # Seed software packages
