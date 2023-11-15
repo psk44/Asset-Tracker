@@ -10,11 +10,11 @@
 
 <h2>Results</h2>
 
-<% if @devices.present? %>
-  <p>Hits: <%= @devices.count %></p>
+<% if @device.present? %>
+  <p>Hits: <%= @device.count %></p>
 
   <ul>
-    <% @devices.each do |d| %>
+    <% @device.each do |d| %>
       <li><%= d.title %><li>
     <% end %>
   </ul>
