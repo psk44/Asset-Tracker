@@ -7,7 +7,6 @@
   <%= form.label :employee_id, "Filter by employee:" %>
   <%= form.select :employee_id, [1,2,3,4,5], :selected => @employee_id%>
 
-
   <%= form.submit "Search" %>
 <% end %>
 
@@ -15,12 +14,12 @@
 
 <h2>Results</h2>
 
-<% if @device_id.present? %>
-  <p>Hits: <%= @device_id.count %></p>
+<% if @devices.present? %>
+  <p>Hits: <%= @devices.count %></p>
 
   <ul>
-    <% @device_id.each do |d| %>
-      <li><%= d.title %><li>
+    <% @devices.each do |d| %>
+      <li><%= d.name %></li>
     <% end %>
   </ul>
 <% end %>
