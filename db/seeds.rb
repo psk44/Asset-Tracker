@@ -37,12 +37,10 @@ end
 end
 
 # 3 devices to each employee
-3.times do |n|
-  Employee.all.each do |employee|
-    device=Device.all.sample
-    device.employee=employee
-    device.save
-  end
+# Assign each device to a random employee
+Device.find_each do |device|
+  employee = Employee.all.sample
+  device.update(employee: employee)
 end
 
 # Seed software packages

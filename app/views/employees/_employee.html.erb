@@ -1,9 +1,5 @@
 <div id="<%= dom_id employee %>">
   
-  <% if employee.profile_picture.present? %> 
-    <%= image_tag(employee.profile_picture, :class => "img-thumbnail") %>
-  <% end %>
-
   <p>
     <strong>Full name:</strong>
     <%= employee.full_name %>

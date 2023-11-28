@@ -3,18 +3,23 @@
 <%= form_with url: "/search", method: :get do |form| %>
   <%= form.label :query, "Search for:" %>
   <%= form.text_field :query, :value => @query%>
+
+  <%= form.label :employee_id, "Filter by employee:" %>
+  <%= form.select :employee_id, [1,2,3,4,5], :selected => @employee_id%>
+
+
   <%= form.submit "Search" %>
 <% end %>
 
-<p class="mt-3">'<%= @query %>'</p>
+<p class="mt-3">You searched for '<%= @query %>'</p>
 
 <h2>Results</h2>
 
-<% if @device.present? %>
-  <p>Hits: <%= @device.count %></p>
+<% if @device_id.present? %>
+  <p>Hits: <%= @device_id.count %></p>
 
   <ul>
-    <% @device.each do |d| %>
+    <% @device_id.each do |d| %>
       <li><%= d.title %><li>
     <% end %>
   </ul>

@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
   def index
     @query = params[:query]
+    @employee_id = params[:employee_id]
 
-    @device = Device.where(title: @query)
+    @devices = Device.where("title like '#{@query}%'").where(employee_id: @employee_id)
   end
 end
