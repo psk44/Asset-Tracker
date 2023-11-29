@@ -4,8 +4,11 @@
   <%= form.label :query, "Search for:" %>
   <%= form.text_field :query, :value => @query%>
 
-  <%= form.label :employee_id, "Filter by employee:" %>
-  <%= form.select :employee_id, [1,2,3,4,5], :selected => @employee_id%>
+  <%= form.label :category_id, "Filter by category:" %>
+  <%= form.select :category_id, DeviceCategory.all.map { |c| [c.name, c.id] }, { :selected => @category_id } %>
+
+  <%= form.label :manufacturer_id, "Filter by manufacturer:" %>
+  <%= form.select :manufacturer_id, DeviceManufacturer.all.map { |m| [m.name, m.id] }, { :selected => @manufacturer_id } %>
 
   <%= form.submit "Search" %>
 <% end %>
